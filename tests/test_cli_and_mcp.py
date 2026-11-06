@@ -63,7 +63,7 @@ def test_cli_receipt_output_file(demo_db, state, tmp_path, capsys):
 
 def test_cli_receipt_list_order_limit_and_status(demo_db, state, capsys):
     assert main(["--dsn", demo_db, "preflight", "select count(*) from events"]) == 0
-    first = capsys.readouterr().out
+    capsys.readouterr()
     assert main(["--dsn", demo_db, "preflight", "select count(*) from users"]) == 0
     capsys.readouterr()
 
